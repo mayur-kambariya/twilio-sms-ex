@@ -1,0 +1,22 @@
+<h1>Send SMS</h1>
+ 
+<%= form_for @user do |f| %>
+  <% if @user.errors.any? %>
+    <ul>
+    <% @user.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+    </ul>
+  <% end %>
+ 
+  <p><%= f.label :name %><br>
+  <%= f.text_field :name%></p>
+ 
+  <p><%= f.label :phone %><br>
+  <%= f.text_field :phone%></p>
+ 
+   <p><%= f.label :message_body %><br>
+  <%= f.text_field :body%></p>
+
+  <%= f.submit 'Send SMS'%>
+<% end %>
